@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robux to DevEx Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-pattern"></div>
+    <div class="container">
+        <div class="calculator-card">
+            <div class="card-header">
+                <div class="icon-wrapper">
+                    <svg class="icon-robux" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h1>Robux Converter</h1>
+                <p class="subtitle">Convert to your currency</p>
+            </div>
+            
+            <div class="input-section">
+                <div class="currency-selector-wrapper">
+                    <label for="currency-select" class="input-label">Currency</label>
+                    <div class="currency-select-container">
+                        <select id="currency-select" class="currency-select">
+                            <option value="USD">USD - US Dollar ($)</option>
+                            <option value="BRL">BRL - Brazilian Real (R$)</option>
+                            <option value="INR" selected>INR - Indian Rupee (₹)</option>
+                            <option value="EUR">EUR - Euro (€)</option>
+                            <option value="GBP">GBP - British Pound (£)</option>
+                            <option value="CAD">CAD - Canadian Dollar (C$)</option>
+                            <option value="AUD">AUD - Australian Dollar (A$)</option>
+                            <option value="JPY">JPY - Japanese Yen (¥)</option>
+                            <option value="MXN">MXN - Mexican Peso ($)</option>
+                            <option value="ARS">ARS - Argentine Peso ($)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="input-wrapper">
+                    <label for="robux-input" class="input-label">Robux Amount</label>
+                    <div class="input-container">
+                        <span class="input-prefix">R$</span>
+                        <input 
+                            type="number" 
+                            id="robux-input" 
+                            placeholder="0"
+                            min="0"
+                            step="1"
+                        >
+                    </div>
+                </div>
+
+                <div class="rate-badge">
+                    <span class="rate-label">Rate</span>
+                    <span class="rate-value"><span id="rate-display">0.29</span> <span id="currency-code">INR</span>/Robux</span>
+                </div>
+            </div>
+
+            <button id="calculate-btn" class="calculate-btn">
+                <span>Convert Now</span>
+                <svg class="btn-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+
+            <div id="result" class="result-container">
+                <div class="result-header">
+                    <span class="result-icon" id="result-icon">₹</span>
+                    <span class="result-label">Converted Value</span>
+                </div>
+                <div class="result-main">
+                    <p class="result-value" id="result-value">0.00</p>
+                    <span class="result-currency" id="result-currency">INR</span>
+                </div>
+                <p class="result-detail" id="result-detail"></p>
+            </div>
+
+            <div class="info-box">
+                <svg class="info-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M8 11V8M8 5H8.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <p>Reference calculator. Actual rates may vary based on Roblox policies.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
